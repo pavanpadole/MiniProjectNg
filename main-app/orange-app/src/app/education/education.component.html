@@ -1,0 +1,46 @@
+<div class="container-fluid" style="background-color:lightgreen;">
+
+  <div class="row   justify-content-center bg-warning text-light align-items-center" style="height: 130px;">
+
+    <h2>"Every great dream begins with a dreamer...!!!"</h2>
+   
+  
+    
+  </div>
+  <div class="row mt-1" style="height: 150px">
+
+    
+  
+    <div class="col-3 d-none col-md-3 d-md-block"></div>
+
+    <div class="  col-12 col-md-6 bg-secondary  d-flex justify-content-between align-items-center">
+      <h6>Add your poems</h6>
+     <input [(ngModel)]="newTask" class=" form-control" type="text"
+        style="height: 80px; word-wrap: break-word; word-break: keep-all;"> 
+      <button (click)="AddTask()" class="btn btn-dark">ADD</button>
+      <div class="col-3 d-none col-md-3 d-md-block"></div>
+  
+    </div>
+  </div>
+  
+  <!--repeating -->
+  
+  
+  <div *ngFor=" let item of list ; let index =index " class="row mt-1" style="height: 110px">
+  
+    <div class="col-3 d-none col-md-3 d-md-block"></div>
+    <div class=" col-12 col-md-6 bg-secondary  d-flex justify-content-between align-items-center">
+  
+  
+      <div class="text-light h6">{{item}}</div>
+      <button (click)=" deleteTask(index)" class="btn btn-warning">del</button>
+      <button (click)="increment() " class="bg-danger">Like</button>
+      <button (click)="decrement() " class="bg-danger">dislike</button>
+      {{counter}}
+    </div>
+    <div class="col-3 d-none col-md-3 d-md-block"></div>
+  </div>
+  
+
+
+</div>

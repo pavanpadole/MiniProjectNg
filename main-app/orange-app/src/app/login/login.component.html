@@ -1,0 +1,70 @@
+
+
+<div class="container-fluid">
+  
+  <div class="row" style="height: 100vh">
+    <!-- Left Block -->
+    <div
+      class="col-7   d-flex flex-column  align-items-center text-light "
+      style="background-image:url(assets/login-lll.jpg);background-repeat: no-repeat; background-position: center; background-size: cover;"  
+    >
+  
+    <div>
+      <fa-icon [icon]="faBook" style="font-size: 74px"></fa-icon>
+    </div>
+    
+      <div class="h3">Welcome to Spill Poetry word</div>
+
+      <div class="h6">
+       
+      </div>
+    </div>
+
+    <!-- Right Block-->
+    <div
+      class="col-5  d-flex flex-column justify-content-center align-items-center "
+      [formGroup]="fbFormGroup"
+      style="background: black;"
+    >
+      <div>
+        <img src="assets/loginimg.jpg" style="height: 150px;">
+       </div>
+
+      <div class="alert alert-danger" role="alert" *ngIf="uiInvalidCredential">
+        A simple danger alert—check it out!
+      </div>
+
+      <div class="h4 text-light my-4">Application Login</div>
+
+      <div>
+        <input
+          type="text"
+          placeholder="Enter the Username"
+          class="form-control"
+          formControlName="username"
+          required title="please match username"
+        />
+      </div>
+
+      <div class="mt-1">
+        <input
+          type="password"
+          placeholder="Enter the Password"
+          class="form-control"
+          formControlName="password"
+          required
+        />
+      </div>
+
+      <button
+        class="btn btn-ml btn-outline-success mt-2 mb-2"
+        [disabled]="!fbFormGroup.valid"
+        (click)="loginProcessHere()"
+      >
+        Login Here
+      </button>
+
+      <a routerLink="/register">Register Here</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="container-fluid" >
+  <div class="row" style="justify-content: center; display: flex; align-items: center;">
+    <ng-container *ngFor="let item of list">
+
+      <div class="col-8 my-4" style="font-family: fantasy; background-image: linear-gradient(rgb(20, 224, 13),rgb(18,44,56)) ; padding: 20px; border: 5px solid; height: 650px; color: black; text-decoration-color: brown;">
+   <!--   <h5>{{ item.title }}</h5> -->
+        <div style="align-items: center; justify-content: center; text-align: center;">
+          <h3>Still I  Rise</h3>
+     <p>
+      You may write me down in history<br>
+With your bitter, twisted lies,<br>
+You may tread me in the very dirt<br>
+But still, like dust, I'll rise.<br><br>
+
+Does my sassiness upset you?<br>
+Why are you beset with gloom?<br>
+'Cause I walk like I've got oil wells<br>
+Pumping in my living room.<br><br>
+
+Just like moons and like suns,<br>
+With the certainty of tides,<br>
+Just like hopes springing high,<br>
+Still I'll rise.<br>
+</p>
+        </div >
+        <button style="margin-left: 250px;"
+          class="btn btn-outline-secondary"
+          (click)="showDetailsModal(item)"
+        >
+          Show Details
+        </button>
+        <button (click)="increment()" class="btn btn-danger" style="align-items: flex-end; justify-content: space-between; margin: 30px;">like</button>
+        <button (click)="decrement()" class="btn btn-warning"
+          style="align-items: flex-end; justify-content: space-between; margin: 30px;">dislike</button>
+          {{counter}}
+        </div>
+    </ng-container>
+  </div>
+</div>

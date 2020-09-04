@@ -1,0 +1,85 @@
+
+<div class="container-fluid" >
+  <div class="row" style="height: 100vh">
+    <!-- Left Block -->
+    <div
+      class="col-7  d-flex flex-column  align-items-center"
+      style="background-image:url(assets/login-lll.jpg);background-repeat: no-repeat; background-position: center; background-size: cover;"
+    >
+     
+      <div class="h3 text-light" style=" margin-top: 100px;" >Welcome to Spill poetry word</div>
+      <div class="h6">
+  
+      </div>
+    </div>
+
+    <!-- Right Block-->
+    <div
+      class="col-5 d-flex flex-column justify-content-center align-items-center"
+      [formGroup]="fbFormGroup"
+      style="background: black;"
+    >
+      <div class="alert alert-danger" role="alert" *ngIf="uiInvalidCredential">
+        A simple danger alert—check it out!
+
+      </div>
+
+      
+      <div>
+        <fa-icon [icon]="faBook" style="font-size: 74px ;color:whitesmoke"></fa-icon>
+      </div>
+
+      <div class="h4 text-light">Application Register</div>
+
+      <div>
+        <input
+          type="text"
+          placeholder="Enter Username"
+          class="form-control"
+          formControlName="username"
+          required
+        />
+      </div>
+
+      <div class="mt-1">
+        <input
+          type="password"
+          placeholder="Enter Password"
+          class="form-control"
+          formControlName="password"
+          required
+        />
+      </div>
+
+      <div class="mt-1">
+        <input
+          type="text"
+          placeholder="Enter Email"
+          class="form-control"
+          formControlName="email"
+          required
+        />
+      </div>
+
+      <div class="mt-1">
+        <input
+          type="text"
+          placeholder="Enter Mobile"
+          class="form-control"
+          formControlName="mobile"
+          required
+        />
+      </div>
+
+      <button
+        class="btn btn-ml btn-outline-success mt-2 mb-2"
+        [disabled]="!fbFormGroup.valid"
+        (click)="registerHere()"
+      >
+        Register Here
+      </button>
+
+      <a routerLink="/login">Login Here</a>
+    </div>
+  </div>
+</div>
